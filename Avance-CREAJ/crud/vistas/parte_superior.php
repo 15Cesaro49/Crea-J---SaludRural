@@ -31,63 +31,7 @@ if($_SESSION["correo"] === null){
     <link rel="stylesheet" type="text/css" href="vendor/datatables/datatables.min.css"/>
     <!--datables estilo bootstrap 4 CSS-->  
     <link rel="stylesheet"  type="text/css" href="vendor/datatables/DataTables-1.10.18/css/dataTables.bootstrap4.min.css">      
-     <style>
-      /* INICIO DE EL ESTILO DE EL TRADUCTOR */
-
-/* Quita el texto (Con la tecnologia de) */
-
-div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
-    font-size: 0%;
-  }
-  
-  /* Quita el texto (Traductor de google) */
-  div .skiptranslate.goog-te-gadget span a{
-    font-size: 0;
-  }
-  
-  /* Cambia el estilo del boton para seleccionar el idioma */
-  div .goog-te-combo{
-            color: #000000;
-            font-weight: bold;
-            cursor: pointer;
-            border: none;
-            border-radius: 10px;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            padding: 10px 10px 8px;
-            transition: background-color 0.1s, color 0.1s;
-  }
-  div .goog-te-combo:hover{
-    background-color: blue;
-    color: #ffffff;
-  }
-  /* Cambia el tamaño y mueve la parte azul del traductor*/
-  .VIpgJd-ZVi9od-ORHb-OEVmcd.skiptranslate , .VIpgJd-ZVi9od-ORHb{
-    width: 55%;
-    top: 2.0%;
-    left: -30.9%;
-  }
-  .google{
-    margin: 10px 0;
-  }
-  
-  /* Cambia el estilo de la lista de idiomas del menú del traductor */
-  .goog-te-combo option{
-    background-color: #ffffff;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: bold;
-    color: #000000;
-    -webkit-o-border-radius: 10px;
-    -moz-o-border-radius: 10px;
-    -ms-o-border-radius: 10px;
-  }
-
-  /* Hace invisible la imagen de "Google" */
-  a img{
-    width: 0;
-  }
-  
-  /* FIN DE EL DISEÑO DE EL TRADUCTOR */
-    </style>   
+    <link rel="stylesheet" href="../CSS/traductor.css">
 </head>
 
 <body id="page-top">
@@ -184,9 +128,43 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
           <br><br><br><br><br><br>
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
-          <div id="google_translate_element" class="google"></div>
-         <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-            <script src="../JS/traductor.js"></script>
+            <!-- Logo o nombre del sitio y traductor-->
+            <div id="google_translate_element"></div>
+            
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+           <!--DIV DEL TRADUCTOR-->
+           <div class="md:relative md:left" id="google_translate_element"></div>
+           
+            <!--INICIO DEL SCRIPT DEL TRADUCTOR DE GOOGLE-->
+       <script>
+         // Crear un elemento <script> para cargar el script de traducción de Google
+         const script = document.createElement('script');
+         script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+         script.async = true;
+         document.body.appendChild(script);
+       
+         // Función para manejar los cambios en el estilo del cuerpo
+         const handleBodyChanges = () => {
+           const currentTop = parseInt(document.body.style.top) || 0;
+           if (currentTop > 0) {
+             document.body.style.top = '0px';
+           }
+         };
+       
+         // Definir la función global googleTranslateElementInit
+         window.googleTranslateElementInit = () => {
+           if (!document.querySelector('.goog-te-combo')) {
+             new window.google.translate.TranslateElement(
+               { pageLanguage: 'es', includedLanguages: 'en,es' },
+               'google_translate_element'
+             );
+           }
+       
+           // Observar los cambios en el estilo del cuerpo
+           const observer = new MutationObserver(handleBodyChanges);
+           observer.observe(document.body, { attributes: true, attributeFilter: ['style'] });
+         };
+       </script>
             
             <div class="topbar-divider d-none d-sm-block"></div>
 

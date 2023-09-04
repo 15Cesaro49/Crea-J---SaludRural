@@ -33,58 +33,8 @@ if (!isset($_SESSION['nombre']) || empty($_SESSION['nombre'])) {
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-    /* INICIO DE EL ESTILO DE EL TRADUCTOR */
-
-/* Quita el texto (Con la tecnologia de) */
-div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
-    font-size: 0%;
-  }
-  
-  /* Quita el texto (Traductor de google) */
-  div .skiptranslate.goog-te-gadget span a{
-    font-size: 0;
-  }
-  
-  /* Cambia el estilo del boton para seleccionar el idioma */
-  div .goog-te-combo{
-            color: #000000;
-            font-weight: bold;
-            cursor: pointer;
-            border: none;
-            border-radius: 10px;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            padding: 10px 20px;
-            transition: background-color 0.1s, color 0.1s;
-  }
-  div .goog-te-combo:hover{
-    background-color: blue;
-    color: #ffffff;
-  }
-  /* Cambia el tamaño y mueve la parte azul del traductor*/
-  .VIpgJd-ZVi9od-ORHb-OEVmcd.skiptranslate , .VIpgJd-ZVi9od-ORHb{
-    width: 55%;
-    top: 1.3%;
-    left: -52.9%;
-  }
-  
-  /* Cambia el estilo de la lista de idiomas del menú del traductor */
-  .goog-te-combo option{
-    background-color: #ffffff;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: bold;
-    color: #000000;
-    -webkit-o-border-radius: 10px;
-    -moz-o-border-radius: 10px;
-    -ms-o-border-radius: 10px;
-  }
-  
-  /* Hace invisible la imagen de "Google" */
-  a img{
-    width: 0;
-  }
-  
-  </style>
+    <link rel="stylesheet" href="../CSS/traductor.css">
+    
   </head>
   <body>
   <nav class="bg-white p-4  w-full z-10 ">
@@ -92,9 +42,40 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
            
         <div id="google_translate_element"></div>
             
-            <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-            <script src="../JS/traductor.js"></script>
-
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+           <!--DIV DEL TRADUCTOR-->
+           <div class="md:relative md:left" id="google_translate_element"></div>
+           
+            <!--INICIO DEL SCRIPT DEL TRADUCTOR DE GOOGLE-->
+       <script>
+         // Crear un elemento <script> para cargar el script de traducción de Google
+         const script = document.createElement('script');
+         script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+         script.async = true;
+         document.body.appendChild(script);
+       
+         // Función para manejar los cambios en el estilo del cuerpo
+         const handleBodyChanges = () => {
+           const currentTop = parseInt(document.body.style.top) || 0;
+           if (currentTop > 0) {
+             document.body.style.top = '0px';
+           }
+         };
+       
+         // Definir la función global googleTranslateElementInit
+         window.googleTranslateElementInit = () => {
+           if (!document.querySelector('.goog-te-combo')) {
+             new window.google.translate.TranslateElement(
+               { pageLanguage: 'es', includedLanguages: 'en,es' },
+               'google_translate_element'
+             );
+           }
+       
+           // Observar los cambios en el estilo del cuerpo
+           const observer = new MutationObserver(handleBodyChanges);
+           observer.observe(document.body, { attributes: true, attributeFilter: ['style'] });
+         };
+       </script>
             <!-- Menú de navegación -->
             
             <ul class="hidden sm:flex space-x-4">
