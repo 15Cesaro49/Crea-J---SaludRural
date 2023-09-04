@@ -13,9 +13,7 @@ if (isset($_SESSION['usuario_id']) && !empty($_SESSION['usuario_id'])) {
         $usuarioId = $_SESSION['usuario_id'];
         $nombre = $_POST["nombre"];
         $correo = $_POST["correo"];
-        #$contacto = $_POST["info"];
         $telefono = $_POST["telefono"];
-        #$genero = $_POST["genero"];
         $fecha = $_POST["fecha"];
         $monto = $_POST["monto"];
         $tarjeta = $_POST["tarjeta"];
