@@ -30,58 +30,7 @@ $conn->close();
     <link rel="stylesheet" href="../CSS/form-donaciones.css">
     
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <style>
-      /* Quita el texto (Con la tecnologia de) */
-div .skiptranslate.goog-te-gadget,
-.goog-te-combo .dark {
-    font-size: 0%;
-    margin-left: 5%;
-    margin-top: -2.5%;
-    background-size: cover;
-}
-
-/* Quita el texto (Traductor de google) */
-div .skiptranslate.goog-te-gadget span a {
-    font-size: 0;
-}
-
-/* Cambia el estilo del boton para seleccionar el idioma */
-div .goog-te-combo {
-    background-color: #cccccca6;
-    color: #000000;
-    font-weight: bold;
-    cursor: pointer;
-    -o-border-radius: 10px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    border-radius: 10px;
-}
-
-/* Cambia el tamaño y mueve la parte azul del traductor*/
-.VIpgJd-ZVi9od-ORHb-OEVmcd.skiptranslate,
-.VIpgJd-ZVi9od-ORHb {
-    width: 55%;
-    top: 1.3%;
-    left: -60%;
-}
-
-/* Cambia el estilo de la lista de idiomas del menú del traductor */
-.goog-te-combo option {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: bold;
-    color: #000000;
-    -webkit-o-border-radius: 10px;
-    -moz-o-border-radius: 10px;
-    -ms-o-border-radius: 10px;
-}
-
-/* Hace invisible la imagen de "Google" */
-a img {
-    width: 0;
-}
-      </style>
+   
   </head>
 <body>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
