@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Donacion equipo medico</title>
     <link rel="stylesheet" href="../CSS/form-donaciones.css">
+    <link rel="stylesheet" href="../CSS/traductor.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   </head>
 <body>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Donacion monetaria</title>
-    
+    <link rel="stylesheet" href="../CSS/traductor.css">
     <link rel="stylesheet" href="../CSS/form-donaciones.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     

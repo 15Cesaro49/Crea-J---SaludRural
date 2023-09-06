@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="../CSS/form-donaciones.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="../CSS/traductor.css">
+
   </head>
 <body>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
