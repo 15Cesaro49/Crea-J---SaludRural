@@ -1,42 +1,27 @@
+
 <?php
-// Incluye la conexión a la base de datos
-include_once 'db_connection.php'; // Asegúrate de ajustar el nombre de tu archivo de conexión
+session_start();
+include_once 'db_connection.php'; // Incluye la conexión a la base de datos
 
-// Verifica si se ha enviado el formulario de edición
-if (isset($_POST["submit"])) {
-    $blogId = $_POST['blog_id'];
-    $titulo = $_POST['titulo'];
-    $contenido = $_POST['contenido'];
-
-    // Realiza la actualización en la base de datos
-    $updateSql = "UPDATE blogs SET titulo = '$titulo', contenido = '$contenido' WHERE id = $blogId";
-
-    if ($conn->query($updateSql) === TRUE) {
-        header("Location: realizado_blog.php?id=$blogId"); // Redirige de vuelta a la página de detalles del blog
-        exit();
-    } else {
-        echo "Error al actualizar el blog: " . $conn->error;
+if (isset($_SESSION['id'])) {
+    $idUsuario = $_SESSION['id'];
+    
+    $consulta = "SELECT * FROM hospitales WHERE id = $idUsuario"; // Cambia el ID según tu caso
+    $resultado = $conn->query($consulta);
+    $ruta_imagen = "../imagen-hos/"; // Cambia esto a la ruta real de la imagen
+    
+    // Si la ruta de la imagen está vacía, utiliza una imagen predeterminada
+    if (empty($ruta_imagen)) {
+        $ruta_imagen = "../imagen-hos/"; // Cambia esto a la ruta de la imagen predeterminada
     }
-}
-
-// Recupera los datos del blog para mostrar en el formulario de edición
-if (isset($_GET['id'])) {
-    $blogId = $_GET['id'];
-    $sql = "SELECT id, titulo, contenido FROM blogs WHERE id = $blogId";
-    $result = $conn->query($sql);
-
-    if ($result->num_rows > 0) {
-        $blog = $result->fetch_assoc();
-    } else {
-        echo 'No se encontró el blog.';
-        exit();
+    
+    if ($resultado->num_rows > 0) {
+        $usuario = $resultado->fetch_assoc();
+        $imagen_predeterminada = "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80";
     }
-} else {
-    echo 'ID de blog no proporcionado.';
-    exit();
-}
+
+
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -142,21 +127,43 @@ if (isset($_GET['id'])) {
             </ul>
             </div>
     </nav><br><br><br>
-    <h1>Editar Blog</h1>
-    <form method="POST" class="bg-white p-6 rounded-md shadow-lg">
-        <input type="hidden" name="blog_id" value="<?php echo $blogId; ?>">
-        <label class="block mb-2">Título:</label>
-        <input type="text" name="titulo" class="w-full px-3 py-2 border rounded" value="<?php echo $blog['titulo']; ?>">
-
-        <label class="block mb-2">Contenido:</label>
-        <textarea name="contenido" rows="4" class="w-full px-3 py-2 border rounded"><?php echo $blog['contenido']; ?></textarea>
-
-        <button type="submit" name="submit" class="bg-indigo-600 text-white py-2 px-4 rounded-full">Guardar Cambios</button>
-    </form>
+    <div class="container mx-auto mt-8 p-4 bg-white ">
+    <h1 class="text-2xl font-bold mb-4 text-center">Editar Necesidad</h1>
+    
+    <!-- Formulario de edición -->
+    <?php
+    include_once 'db_connection.php'; // Incluye la conexión a la base de datos
+    
+    if (isset($_GET['id'])) {
+        $blogId = $_GET['id'];
+        $consulta = "SELECT * FROM blogs WHERE id = $blogId"; // Cambia esto a tu consulta SQL
+        
+        $resultado = $conn->query($consulta);
+        
+        if ($resultado->num_rows > 0) {
+            $blog = $resultado->fetch_assoc();
+            
+            echo '<form action="actualizar_blog.php" method="post">';
+            echo '<input type="hidden" name="id_necesidad" value="' . $blog['id'] . '">';
+            echo '<label for="nombre" class="block mb-2 font-semibold">Nombre:</label>';
+            echo '<input type="text" name="nombre" id="nombre" class="border bg-gray-100 rounded px-2 py-1 mb-4 w-full" value="' . $blog['titulo'] . '">';
+            
+            echo '<label for="descripcion" class="block mb-2 font-semibold">Descripción:</label>';
+            echo '<textarea name="descripcion" id="descripcion" class="border bg-gray-100 rounded px-2 py-1 mb-4 w-full">' . $blog['contenido'] . '</textarea>';
+            
+            
+            echo '<button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Actualizar</button>';
+            echo '</form>';
+        } else {
+            echo '<p>No se encontró el blog.</p>';
+        }
+    } else {
+        echo 'ID de blog no proporcionado.';
+    }
+}
+    $conn->close();
+    ?>
+</div>
 </body>
 </html>
 
-<?php
-// Cierra la conexión a la base de datos
-$conn->close();
-?>

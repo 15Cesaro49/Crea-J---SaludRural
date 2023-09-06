@@ -255,7 +255,6 @@ if ($correo == null || $correo == '') {
                     echo '<div class="grid grid-cols-2 gap-8">';
                     while ($donacion = $resultado->fetch_assoc()) {
                         echo '<div class="bg-white p-4 rounded-lg shadow-md">';
-                        echo '<div><span class="font-semibold">ID:</span> ' . $donacion['id_donacion'] . '</div>';
                         echo '<div><span class="font-semibold">Hospital:</span> ' . obtenerNombreHospital($conn, $donacion['id_hospital']) . '</div>';
                         echo '<div><span class="font-semibold">Fecha de Donación:</span> ' . $donacion['fecha'] . '</div>';
                         echo '<div><span class="font-semibold">Monto:</span> ' . $donacion['insumo'] . '</div>';
