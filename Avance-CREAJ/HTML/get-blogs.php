@@ -4,7 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalles</title>
-    <link rel="stylesheet" href="../CSS/traductor.css">
+  <style>
+     /* Quita el texto (Con la tecnologia de) */
+div .skiptranslate.goog-te-gadget,
+.goog-te-combo .dark {
+  font-size: 0%;
+  margin-left: 5%;
+  margin-top: 0.5%;
+  background-size: cover;
+}
+
+/* Quita el texto (Traductor de google) */
+div .skiptranslate.goog-te-gadget span a {
+  font-size: 0;
+}
+
+/* Cambia el estilo del boton para seleccionar el idioma */
+div .goog-te-combo {
+  color: #000000;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 10px 20px;
+  -o-border-radius: 20px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 20px;
+  border-radius: 10px;
+}
+
+div .goog-te-combo:hover{
+  background-color: rgba(27, 94, 238, 0.911);
+  color: #ffffff;
+}
+
+/* Cambia el tamaño y mueve la parte azul del traductor*/
+.VIpgJd-ZVi9od-ORHb-OEVmcd.skiptranslate,
+.VIpgJd-ZVi9od-ORHb {
+  width: 55%;
+  top: 1.3%;
+  left: -70%;
+}
+
+/* Cambia el estilo de la lista de idiomas del menú del traductor */
+.goog-te-combo option {
+  background: #ffffff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: bold;
+  color: #000000;
+  -webkit-o-border-radius: 10px;
+  -moz-o-border-radius: 10px;
+  -ms-o-border-radius: 10px;
+}
+
+/* Hace invisible la imagen de "Google" */
+a img {
+  width: 0;
+}
+  </style>
 
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
