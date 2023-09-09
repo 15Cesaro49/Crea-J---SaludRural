@@ -68,7 +68,7 @@
     </script>
 
     <div class="container">
-      <header>Donacion de insumos medicos</header>
+      <header>Donación de insumos médicos</header>
       <div class="progress-bar">
         <div class="step">
           <p>Paso 1</p>
@@ -122,11 +122,11 @@
         <form action="../PHP/form-donacion-insumos.php" method="post">
           <div class="page slide-page">
             <div class="field">
-              <div class="label">Nombre Completo</div>
+              <div class="label">Nombre completo</div>
               <input type="text" name="nombre" required>
             </div>
             <div class="field">
-              <div class="label">Correo Electronico</div>
+              <div class="label">Correo electrónico</div>
               <input type="text" name="correo" required>
             </div>
             <div class="field">

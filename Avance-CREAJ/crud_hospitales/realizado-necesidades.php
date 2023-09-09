@@ -77,8 +77,8 @@ if (!isset($_SESSION['nombre']) || empty($_SESSION['nombre'])) {
             <!-- Menú de navegación -->
             
             <ul class="hidden sm:flex space-x-4">
-            <li><a href="Index.php" class="text-green-600 hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" style="font-size: 1.20em; font-weight: bold;" aria-current="page">Salud Rural</a></li>
-            <li><a href="index.php" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Inicio</a></li>
+            <li><a href="Index.php" class="text-green-600 hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" style="font-size: 1.20em; font-weight: bold;" aria-current="page">SaludRural</a></li>
+            <li><a href="index.php" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page"><strong>Inicio</strong></a></li>
                 <li class="relative">
                     <!-- Enlace con menú desplegable -->
                     <a href="#" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" id="donaciones-menu">
@@ -155,7 +155,7 @@ if (!isset($_SESSION['nombre']) || empty($_SESSION['nombre'])) {
     <li><a href="../PHP/cerrar.php" class="block px-3 py-2 text-red-600 hover:bg-red-600 hover:text-white">Cerrar sesión</a></li>
     <!-- Agrega más elementos de menú aquí si es necesario -->
 </ul><br><br>
-<h1 class="text-2xl font-bold mb-4 text-center">Necesidades Realizados</h1>
+<h1 class="text-2xl font-bold mb-4 text-center">Necesidades Realizadas</h1>
 <div class="container mx-auto mt-8 p-4 ">
 <main class="container mx-auto mt-8 mb-8">
     <section class="flex justify-center">
