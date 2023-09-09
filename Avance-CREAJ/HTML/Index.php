@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <link rel="shortcut icon" href="../../Imagenes/favicon.png"/>
+    <link rel="shortcut icon" href="../Imagenes/favicon.png"/>
   </head>
     <body>
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
