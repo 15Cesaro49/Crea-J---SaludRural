@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <link rel="shortcut icon" href="../../Imagenes/favicon.png"/>
+  </head>
     <body>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </body>
+</html>
+
 <?php
 session_start();
 error_reporting(0);
@@ -47,7 +53,7 @@ if (!isset($_SESSION['correo']) || empty($_SESSION['correo'])) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="shortcut icon" href="../Imagenes/favicon.png"/>
+    <link rel="shortcut icon" href="../../Imagenes/favicon.png"/>
     <title>SaludRural</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
