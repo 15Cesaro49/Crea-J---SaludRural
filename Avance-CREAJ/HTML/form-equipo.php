@@ -50,7 +50,7 @@
     </button></a>
     
     <div class="container">
-      <header>Donacion de equipo medico</header>
+      <header>Donación de equipo médico</header>
       <div class="progress-bar">
         <div class="step">
           <p>Paso 1</p>
@@ -106,11 +106,11 @@
         <form action="../PHP/form-equipo-medico.php" method="post">
           <div class="page slide-page">
             <div class="field">
-              <div class="label">Nombre Completo</div>
+              <div class="label">Nombre completo</div>
               <input type="text" name="nombre" required>
             </div>
             <div class="field">
-              <div class="label">Correo Electronico</div>
+              <div class="label">Correo electrónico</div>
               <input type="text" name="correo" required>
             </div>
             <div class="field">
@@ -121,8 +121,8 @@
           <div class="page">
             <div class="title">Información de Contacto</div>
             <div class="field">
-              <div class="label">Número de Telefono</div>
-              <input type="Number" name="telefono" required onblur="validatePositiveNumber(this)">
+              <div class="label">Número de teléfono</div>
+              <input type="tel" name="telefono" required onblur="validatePositiveNumber(this)">
             </div>
             <div class="field">
              <div class="label">Fecha de la donación</div>
