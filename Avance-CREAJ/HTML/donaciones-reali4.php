@@ -161,7 +161,7 @@ if ($correo == null || $correo == '') {
     <!-- Apartado de aclaración sobre enviar un correo por cualquier duda o corrección -->
     <div class="cuadro">
         <p class="mensaje">Si necesitas corregir alguna información de tus donaciones, envíanos un mensaje a este correo</p>
-        <a class="correo" href="mailto:admin@gmail.com">admin@gmail.com</a>
+        <a class="correo" href="mailto:admin@gmail.com">Soporte_SaludRural@gmail.com</a>
     </div>
     <!-- Estilo CSS del apartado de aclaración sobre enviar un correo... -->
     <style>
@@ -257,7 +257,7 @@ if ($correo == null || $correo == '') {
                         echo '<div class="bg-white p-4 rounded-lg shadow-md">';
                         echo '<div><span class="font-semibold">Hospital:</span> ' . obtenerNombreHospital($conn, $donacion['id_hospital']) . '</div>';
                         echo '<div><span class="font-semibold">Fecha de Donación:</span> ' . $donacion['fecha'] . '</div>';
-                        echo '<div><span class="font-semibold">Monto:</span> ' . $donacion['insumo'] . '</div>';
+                        echo '<div><span class="font-semibold">Nombre del insumo:</span> ' . $donacion['insumo'] . '</div>';
                         echo '<div><span class="font-semibold">Descripción:</span> ' . $donacion['descripcion'] . '</div>';
                         echo '<div><span class="font-semibold">Estado de la donación:</span> ' . $donacion['estado'] . '</div>';
                         echo '</div>';

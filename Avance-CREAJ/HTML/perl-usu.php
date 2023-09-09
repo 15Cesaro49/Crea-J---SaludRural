@@ -211,7 +211,7 @@ if (isset($_SESSION['id'])) {
             <!-- Formulario para cambiar el teléfono -->
             <form action="../hace_cambios/cambiar_telefono.php" method="post" class="mb-2">
             <label for="">Telefono:</label>
-                <input type="text" name="nuevo_telefono" value="<?php echo $usuario['telefono']; ?>" class="border rounded px-2 py-1 focus:outline-none focus:border-blue-500">
+                <input type="text" name="nuevo_telefono" value="<?php echo $usuario['telefono']; ?>" minlength="8" maxlength="11" class="border rounded px-2 py-1 focus:outline-none focus:border-blue-500">
                 <button type="submit" class="bg-blue-500 text-white px-2 py-1 rounded ml-2">Cambiar</button>
             </form>
             

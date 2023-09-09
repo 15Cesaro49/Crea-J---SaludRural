@@ -159,7 +159,7 @@ if ($correo == null || $correo == '') {
 </ul></br></br></br></br>
     <div class="cuadro">
         <p class="mensaje">Si necesitas corregir alguna información de tus donaciones, envíanos un mensaje a este correo</p>
-        <a class="correo" href="mailto:admin@gmail.com">admin@gmail.com</a>
+        <a class="correo" href="mailto:admin@gmail.com">Soporte_SaludRural@gmail.com</a>
     </div>
     <!-- Estilo CSS del apartado de aclaración sobre enviar un correo... -->
     <style>
